@@ -1,7 +1,8 @@
 <?php
 /**
- * Copyright 2012, 2015 Loggly Inc.
+ * @copyright Copyright 2012, 2015 Loggly Inc.
  * 
+ * @license http://opensource.org/licenses/Apache-2.0
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,10 +17,23 @@
  *
  * @link https://github.com/loggly/loggly-php
  *
+ * @author David Lanstein
+ * @author David Liedle <david.liedle@gmail.com>
+ * 
  */
 
+/**
+ * Custom Exception name
+ */
 class LogglyException extends Exception {}
 
+/**
+ * The Loggly API Class
+ * 
+ * Instantiate this in your code to make use of its public methods to work with
+ * Loggly's API
+ * 
+ */
 class Loggly {
     
     /**
@@ -57,6 +71,8 @@ class Loggly {
     /**
      * makeRequest
      * 
+     * @api
+     * 
      * @param string $path
      * @param type $params
      * @param type $method
@@ -64,6 +80,7 @@ class Loggly {
      * @return type
      * 
      * @throws LogglyException
+     * 
      */
     public function makeRequest( $path, $params = null, $method = 'GET' ){
         
